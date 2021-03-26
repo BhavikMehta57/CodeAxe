@@ -20,14 +20,14 @@
             <a class="links-navbar" href="" >My account</a>
           </li>
           <li class="nav-item" >
-            <a class="links-navbar" href="">Log Out</a>
+            <a class="links-navbar" href="{% url 'login' %}">Log Out</a>
           </li>
         {% else %}
           <li class="nav-item" >
-            <a class="links-navbar" href="">Log In</a>
+            <a class="links-navbar" href="{% url 'login' %}">Log In</a>
           </li>
           <li class="nav-item" >
-            <a class="sign-up" href="">Sign Up</a>
+            <a class="sign-up" href="{% url 'register' %}">Sign Up</a>
           </li>
         {% endif %}
       </ul>
