@@ -14,13 +14,13 @@
 		</div>
 		<div class="login-content">
 			<form cform method="POST" enctype="multipart/form-data" class="form-css">
-				<img src="../media/avatar.svg">
+				<img src="../media/profile.jpg">
 				<h2 class="title">Welcome</h2>
         {% csrf_token %}
         {{form.as_p}}
-              <button type="submit" class="btn btn-primary justify-content-center">Login</button>
+              <button type="submit" class="btn justify-content-center color">Login</button>
             	<a href="{% url 'register' %}" class="dont_acc">Don't have an account ?</a>
-            	<input type="submit" class="btn" value="Sign-up">
+            	<input type="submit" class="btn colour" value="Sign-up">
             </form>
         </div>
     </div>

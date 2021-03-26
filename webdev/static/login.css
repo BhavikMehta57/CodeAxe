@@ -187,6 +187,10 @@ a:hover{
     text-align: center;
 }
 
+/* .button{
+	background-color: #1a0f4d !important;
+} */
+
 @media screen and (max-width: 1050px){
 	.container{
 		grid-gap: 5rem;
