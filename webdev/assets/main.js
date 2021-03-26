@@ -1,7 +1,7 @@
-//Login
 const inputs = document.querySelectorAll(".input");
 
 
+//login
 function addcl(){
 	let parent = this.parentNode.parentNode;
 	parent.classList.add("focus");
