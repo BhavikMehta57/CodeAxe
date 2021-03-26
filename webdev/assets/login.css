@@ -4,11 +4,9 @@
 	box-sizing: border-box;
 }
 
-html{
-	overflow-y: scroll;
-}
 body{
     font-family: 'Poppins', sans-serif;
+    overflow: hidden;
 }
 
 .wave{
@@ -21,7 +19,7 @@ body{
 
 .container{
     width: 100vw;
-    /* height: 100%; */
+    height: 100vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap :7rem;
@@ -186,10 +184,6 @@ a:hover{
 .dont_acc{
     text-align: center;
 }
-
-/* .button{
-	background-color: #1a0f4d !important;
-} */
 
 @media screen and (max-width: 1050px){
 	.container{
