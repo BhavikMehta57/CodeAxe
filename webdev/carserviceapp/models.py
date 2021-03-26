@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.utils import timezone
+import uuid
 # Create your models here.
 
 class MyAccountManager(BaseUserManager):
@@ -62,3 +63,14 @@ class User(AbstractBaseUser):
 
     def has_module_perms(self,app_label):
         return True
+
+class Shop(models.Model):
+    shop_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    shop_name = models.CharField(max_length=50)
+    owner_name = models.CharField(max_length=50)
+    shop_email = models.EmailField(max_length=60,unique=True)
+    shop_contact = models.IntegerField(unique=True)
+    owner_contact = models.IntegerField(unique=True)
+    services = models.CharField(max_length=500)
+    shop_image = models.ImageField()
+    service_charge = models.IntegerField
