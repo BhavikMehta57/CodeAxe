@@ -2,58 +2,36 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <!-- basic -->
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- mobile metas -->
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-   <!-- site metas -->
-   <title>Car Service App</title>
-   <meta name="keywords" content="">
-   <meta name="description" content="">
-   <meta name="author" content="">	
-   <!-- bootstrap css -->
-   <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-   <!-- style css -->
-   
- 
-   <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    
-   <!-- Tweaks for older IEs-->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Car Service App</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">	
+      <!-- bootstrap css -->
+      <link
+         rel="stylesheet"
+         href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+         crossorigin="anonymous"
+      />
+      <!-- style css -->
 
    </head>
    <body>
-      {% include "./Navbar.html" %}
+      {% include "navbar.html" %}
       <!-- Main code -->
         {% block content %}
         {% endblock %}
 
-        {% include "./Footer.html" %}
+        {% include "footer.html" %}
      
-      <!-- <script src="{% static 'turf/jquery.min.js' %}"></script>
-	 <script src="{% static 'turf/popper.min.js' %}"></script>
-	 <script src="{% static 'turf/bootstrap.bundle.min.js' %}"></script>
- 
- 
-	   <script src="{% static 'turf/jquery-3.0.0.min.js' %}"></script>
-	   <script src="{% static 'turf/plugin.js' %}"></script> -->
-	   <!-- sidebar -->
-	   <!-- <script src="{% static 'turf/jquery.mCustomScrollbar.concat.min.js' %}"></script> -->
-	   <!-- <script src="{% static 'turf/custom.js' %}"></script> -->
-	   <!-- javascript --> 
-	   <!-- <script src="{% static 'turf/owl.carousel.js' %}"></script> -->
    </body>
     
 </html>
