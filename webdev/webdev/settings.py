@@ -69,6 +69,8 @@ TEMPLATES = [
     },
 ]
 
+AUTH_USER_MODEL = 'carserviceapp.User'
+
 WSGI_APPLICATION = 'webdev.wsgi.application'
 
 
