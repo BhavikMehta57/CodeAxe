@@ -1,4 +1,5 @@
 {% extends '../base.html' %}
+{% load crispy_forms_tags %}
 {% block title %}Log In{% endblock %}
 {% block navbar %}
 	{% include "../navbar.html" %}	  
@@ -16,7 +17,7 @@
 				<img src="../media/avatar.svg">
 				<h2 class="title">Welcome</h2>
         {% csrf_token %}
-        {{form.as_p}}
+        {{form|crispy}}
               <button type="submit" class="btn btn-primary justify-content-center">Login</button>
             	<a href="{% url 'register' %}" class="dont_acc">Don't have an account ?</a>
             	<input type="submit" class="btn" value="Sign-up">

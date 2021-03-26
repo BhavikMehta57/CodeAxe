@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'django.contrib.gis',
     'carserviceapp.apps.CarserviceappConfig',
+    'multiselectfield',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +138,7 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+GDAL_LIBRARY_PATH = r"C:\Program Files\GDAL\gdal302"
