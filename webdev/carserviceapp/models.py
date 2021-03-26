@@ -1,8 +1,5 @@
 from django.db import models
-<<<<<<< HEAD
-=======
 from django.contrib.auth.models import User
->>>>>>> eb5a199df0c3abc06b87d1a5c5613a81847c48eb
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.utils import timezone
 # Create your models here.
