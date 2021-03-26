@@ -3,17 +3,25 @@
 {% block navbar %}
 	{% include "../navbar.html" %}	  
 {% endblock %}
-{% block content %}
-<div>
-  <div class="container">
-    <form cform method="POST" enctype="multipart/form-data" class="form-css">
-      <h2 style="color: rgb(255, 255, 255);text-align: center;">Login </h2>
-        {% csrf_token %}
-        {{form}}
-        <button type="submit" class="btn btn-primary justify-content-center" style="width: 50%;margin: 0 25%;">Login</button>
-        <p style="text-align: center;color: white;"> Don't have an account ?  <a style="color: rgb(0, 204, 255)" href="{% url 'register' %}">Sign Up</a></p>
-      </form>      
-  </div>
-</div>
 
+{% block content %}
+<body>
+	<img class="wave" src="../media/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="../media/bg.svg">
+		</div>
+		<div class="login-content">
+			<form cform method="POST" enctype="multipart/form-data" class="form-css">
+				<img src="../media/avatar.svg">
+				<h2 class="title">Welcome</h2>
+        {% csrf_token %}
+        {{form.as_p}}
+              <button type="submit" class="btn btn-primary justify-content-center">Login</button>
+            	<a href="{% url 'register' %}" class="dont_acc">Don't have an account ?</a>
+            	<input type="submit" class="btn" value="Sign-up">
+            </form>
+        </div>
+    </div>
+  </body>
 {% endblock %}

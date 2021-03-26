@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-.navbar {
-  background-color: black !important;
-  color: red;
-}
-
-body {
-  background: black;
-}
-.name {
-  background-color: brown;
-}
 
 * {
   box-sizing: border-box;
@@ -109,16 +97,3 @@ fade {
     opacity: 1;
   }
 }
-=======
-.navbar{
-    background-color: black !important;
-    color: red;
-}
-
-body{
-    background: black;
-}
-.name{
-    background-color: brown;
-}
->>>>>>> eb5a199df0c3abc06b87d1a5c5613a81847c48eb

@@ -73,4 +73,4 @@ class Shop(models.Model):
     owner_contact = models.IntegerField(unique=True)
     services = models.CharField(max_length=500)
     shop_image = models.ImageField()
-    service_charge = models.IntegerField
+    service_charge = models.IntegerField()
