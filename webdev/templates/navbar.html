@@ -21,19 +21,24 @@
             <a class="links-navbar" href="" >My account</a>
           </li>
           <li class="nav-item" >
-            <a class="links-navbar" href="">Log Out</a>
+            <a class="links-navbar" href="{% url 'login' %}">Log Out</a>
           </li>
         {% else %}
           <li class="nav-item" >
-            <a class="links-navbar" href="">Log In</a>
+            <a class="links-navbar" href="{% url 'login' %}">Log In</a>
           </li>
           <li class="nav-item" >
-            <a class="sign-up" href="">Sign Up</a>
+            <a class="sign-up" href="{% url 'register' %}">Sign Up</a>
           </li>
         {% endif %}
       </ul>
     </div>
 </nav>
+<<<<<<< HEAD:webdev/templates/navbar.html
 <div class="name"> 
  
+=======
+<div class="name">
+  my name is khan
+>>>>>>> eb5a199df0c3abc06b87d1a5c5613a81847c48eb:webdev/carserviceapp/templates/navbar.html
 </div>

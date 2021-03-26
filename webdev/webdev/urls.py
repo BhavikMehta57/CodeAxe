@@ -15,11 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+<<<<<<< HEAD
+=======
+from django.contrib.auth import views as auth_views
+>>>>>>> eb5a199df0c3abc06b87d1a5c5613a81847c48eb
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('carserviceapp.urls')),
+<<<<<<< HEAD
     path('carserviceapp/', include('carserviceapp.urls')),
+=======
+    path('carserviceapp/', include('django.contrib.auth.urls')),
+>>>>>>> eb5a199df0c3abc06b87d1a5c5613a81847c48eb
 ]
