@@ -169,9 +169,7 @@ nav {
 
 .find_shop {
   max-width: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-left: 300px !important;
 }
 
 /*social media*/
@@ -214,16 +212,6 @@ nav {
 
 /* HomePage Cards */
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  width: 40%;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
 .card-img-top {
   border-radius: 10%;
 }
@@ -244,13 +232,7 @@ nav {
   transition: all 0.4s;
 }
 
-.image__wrapper-text {
-  max-height: 150px;
-  padding: 30px 10px 15px;
-  bottom: 0;
-  position: absolute;
-  text-align: center;
-  background-color: #38d39f;
+.col-md-9{
   color: white;
-  width: 100%;
+  padding: 20px;;
 }
