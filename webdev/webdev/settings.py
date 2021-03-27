@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'address',
     'carserviceapp.apps.CarserviceappConfig',
     'multiselectfield',
     'crispy_forms',
@@ -140,5 +139,3 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
-GOOGLE_API_KEY = 'AIzaSyAvoSeZVjLc9KGMYbZG4rh1M4LPuc2RhJA'

@@ -14,7 +14,7 @@ class RegistrationForm(UserCreationForm):
 class ShopForm(forms.ModelForm):
     class Meta:
         model = Shop
-        fields = ['shop_name','owner_name','shop_email','shop_contact','owner_contact','shop_location','vehicle_servicing_charge',
+        fields = ['shop_name','owner_name','shop_email','shop_contact','owner_contact','shop_locality','shop_district','shop_city','shop_pincode','vehicle_servicing_charge',
         'vehicle_breakdown_Support_charge','vehicle_parts_Replacement_charge','vehicle_modification_charge','body_repair_and_repainting_charge','shop_image']
 
 class BookingForm(forms.ModelForm):

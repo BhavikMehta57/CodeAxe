@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.utils import timezone
 from multiselectfield import MultiSelectField
-from address.models import AddressField
 import uuid
 # Create your models here.
 
@@ -82,7 +81,10 @@ class Shop(models.Model):
     shop_email = models.EmailField(max_length=60,unique=True)
     shop_contact = models.IntegerField(unique=True)
     owner_contact = models.IntegerField(unique=True)
-    shop_location = AddressField()
+    shop_locality = models.CharField(max_length=50)
+    shop_district = models.CharField(max_length=50)
+    shop_city = models.CharField(max_length=50)
+    shop_pincode = models.IntegerField()
     vehicle_servicing_charge = models.IntegerField()
     vehicle_breakdown_Support_charge = models.IntegerField()
     vehicle_parts_Replacement_charge = models.IntegerField()
