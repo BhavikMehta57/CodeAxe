@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% block title %}Log In{% endblock %}
 {% block navbar %}
-	{% include "../navbar.html" %}	  
+	{% include "../navbar.html" %}
 {% endblock %}
 
 {% block content %}
@@ -13,14 +13,15 @@
 			<img src="../media/bg.svg">
 		</div>
 		<div class="login-content">
-			<form cform method="POST" enctype="multipart/form-data" class="form-css">
+			<form method ="post" class="form-css">
 				<img src="../media/profile.jpg">
-				<br><h2 class="title">Shop Register</h2>
-        {% csrf_token %}<br>
-        {{form.as_p}}
-              <br><button type="submit" class="btn justify-content-center color">Login</button>
-            </form>
+				<h2 class="title" style="color: hsl(251, 67%, 18%);">Book</h2>
+				{% csrf_token %}
+				{{form}}
+				<button type="submit" class="btn colour">Book</button>
+			</form>
         </div>
     </div>
   </body>
-{% endblock %}
+  {% endblock %}
+

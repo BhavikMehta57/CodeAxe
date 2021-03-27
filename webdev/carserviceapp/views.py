@@ -1,7 +1,8 @@
 import os
 from django.shortcuts import render,redirect
 from django.contrib.auth import login,authenticate
-from carserviceapp.forms import RegistrationForm, ShopForm
+from .models import *
+from carserviceapp.forms import RegistrationForm, ShopForm, BookingForm
 # Create your views here.
 def home_page(request):
     return render(request, 'homepage.html')
@@ -31,3 +32,25 @@ def shop_view(request):
             form.save()
             return redirect('home')
     return render(request, 'registration/shopform.html', {'form': form})
+
+def booking_view(request):
+    form = BookingForm()
+    if str(request.user) != "AnonymousUser":
+        currentuser = request.user
+        user = User.objects.values_list(
+            'email', flat=True).get(email=currentuser)
+
+        form = BookingForm()
+        if request.method == 'POST':
+            form = BookingForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+                return render(request, 'registration/myaccount.html', {'form': form})
+            else:
+                return render(request, 'registration/booking.html', {'form': form})
+        return render(request, 'registration/booking.html', {'form': form,'user': user})
+    else:
+        return redirect("login")
+
+def myaccount_view(request):
+    return render(request,'registration/myaccount.html')
