@@ -141,18 +141,20 @@ nav {
   height: 100%;
   background-color: transparent;
   overflow: hidden;
-  border-radius: 5px;
 }
 
 .image__wrapper img {
   width: 100%;
-  max-width: 100%;
+  max-width: 300;
+  height: 100%;
+  max-height: 300px;
   height: auto;
-  transition: all 0.4s;
+  transition: all 0.5s;
+  border-radius: 10%;
 }
 
 .image__wrapper:hover img {
-  transform: scale(1.3, 1.3);
+  transform: scale(1.2, 1.2);
   cursor: pointer;
 }
 
@@ -165,6 +167,7 @@ nav {
   background-color: #38d39f;
   color: white;
   width: 100%;
+  border-radius: 5%;
 }
 
 .find_shop {
@@ -232,7 +235,7 @@ nav {
   transition: all 0.4s;
 }
 
-.col-md-9{
+.col-md-9 {
   color: white;
-  padding: 20px;;
+  padding: 20px;
 }
