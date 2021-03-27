@@ -6,29 +6,29 @@
 {% endblock %}
 
 {% block content %}
-<div>
-<img class="wave" src="../media/wave.png">
+<body>
+	<img class="wave" src="../media/wave.png">
 	<div class="container">
 		<div class="img">
 			<img src="../media/bg.svg">
 		</div>
 		<div class="login-content">
-<form method ="post" class="form-css">
-    <img src="../media/profile.jpg">
-    <h2 class="title" style="color: hsl(251, 67%, 18%);">Register</h2>
-    {% csrf_token %}
-    {% for field in registration_form %}
-        <p>
-            {{field.label_tag}}
-            {{field}}
-            {% for error in field.errors %}
-            <small>{{error}}</small>
-            {% endfor %}   
-        </p>
-    {% endfor %}
-    <button type="submit" class="btn colour">Register</button>
-</form>
-</div>
-
+            <form method ="post" class="form-css">
+                <img src="../media/profile.jpg">
+                <h2 class="title" style="color: hsl(251, 67%, 18%);">Register</h2>
+                {% csrf_token %}
+                {% for field in registration_form %}
+                    <p>
+                        {{field.label_tag}}
+                        {{field}}
+                        {% for error in field.errors %}
+                        <small>{{error}}</small>
+                        {% endfor %}   
+                    </p>
+                {% endfor %}
+                <br><br><button type="submit" class="btn colour">Register</button>
+        </div>
+    </div>
+  </body>
 {% endblock %}
 

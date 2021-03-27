@@ -1,29 +1,14 @@
+{% extends 'base.html' %}
 {% load static %}
 {% block navbar %}
 {% include "navbar.html" %}	  
 {% endblock %}
 
-<head>
-  
-    <meta charset="utf-8">
-	
-    <title>Home</title>
-	
-		<link rel="stylesheet" href="{% static 'style.css' %} ">
-		<link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-      crossorigin="anonymous"
-    />
-	<!--font awesome-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-</head>
-<body>
+{% block content %}
+<div>
 	<!--category section-->   
 	<div class="category">
-		<div class="container"><h3 class="category"><b>Categories</b></h3>
+			<h3 class="category_text"><b>categories</b></h3><br>
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="image__wrapper">
@@ -58,59 +43,15 @@
 					</div>
 				</div>                     
 			</div>
-		</div><br><br>
-		<a href="#" type="button" class="btn btn-success btn-lg justify-content-center find_shop">Find Nearby shops</a>
+		<br><br>
+		<a href="#" type="button" class="btn btn-success find_shop text-center">Find Nearby shops</a>
 	</div>
 	<br><br>
-	<!-- <div class="container">
-        <div class="row">
-            <div class="col-lg-6 mb-4">
-				<div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="../media/Capture1.PNG" alt="Quick Serice">
-  
-                    <div class="card-body">
-                        <h5 class="card-title">Quick Serice</h5>
-                        <p class="card-text">Description.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6 mb-4">
-				<div class="card" style="width: 18rem;">
-					<img class="card-img-top" src="../media/Capture2.PNG" alt="Skilled Mechanics">
-	
-					<div class="card-body">
-						<h5 class="card-title">Skilled Mechanics</h5>
-						<p class="card-text">Description.</p>
-					</div>
-				</div>
-            </div>
-
-			<div class="col-lg-6 mb-4">
-				<div class="card" style="width: 18rem;">
-					<img class="card-img-top" src="../media/Capture3.PNG" alt="Road Side Assitance">
-	
-					<div class="card-body">
-						<h5 class="card-title">Road Side Assitance</h5>
-						<p class="card-text">Description.</p>
-					</div>
-				</div>
-            </div>
-
-			<div class="col-lg-6 mb-4">
-				<div class="card" style="width: 18rem;">
-					<img class="card-img-top" src="../media/Capture4.PNG" alt="24/7 Serivce">
-	
-					<div class="card-body">
-						<h5 class="card-title">24/7 Serivce</h5>
-						<p class="card-text">Description.</p>
-					</div>
-				</div>
-			</div>  
-        </div>
-    </div> -->
 	<br><br>
-<div class = "container"><h3 class="category"><b>Key Features</b></h3>
+	
+<div class = "category">
+	<h3 class="category_text"><b>Key Features</b></h3>
+	<br>
 	<div class="row">
 		<div class="col-sm-4">
 			<div class="card-img">
@@ -153,7 +94,8 @@
 		</div>
 	</div>
 </div>
-</body>
+</div>
+{% endblock %}
 
 {% block footer %}
 	{% include "footer.html" %}	  
