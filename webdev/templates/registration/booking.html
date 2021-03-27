@@ -9,15 +9,15 @@
 	<img class="wave" src="../media/wave.png">
 	<div class="container">
 		<div class="img">
-			<img src="../media/bg.svg">
+			<img src="../media/bg.svg" data-aos="flip-right">
 		</div>
 		<div class="login-content">
 			<form method ="post" class="form-css">
-				<img src="../media/profile.jpg">
-				<h2 class="title" style="color: hsl(251, 67%, 18%);">Book</h2>
+				<img src="../media/profile.jpg" data-aos="flip-left">
+				<h2 class="title" style="color: hsl(251, 67%, 18%);" data-aos="fade-up">Book</h2>
 				{% csrf_token %}
 				{{form}}
-				<button type="submit" class="btn colour">Book</button>
+				<button type="submit" class="btn colour" data-aos="fade-left">Book</button>
 			</form>
         </div>
     </div>

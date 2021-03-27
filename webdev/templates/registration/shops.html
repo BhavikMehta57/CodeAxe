@@ -7,13 +7,13 @@
 {% block content %}
 <div class="">
     <div class="aesthetic-back-cover">
-    <h3>REGISTERED SHOPS</h3>
+    <h3 style="color: hsl(251, 67%, 18%);" data-aos="fade-up">REGISTERED SHOPS</h3>
         <div class="container-fluid" style="display: flex;">
             <div class="row">
             {% for s in shops %} 
                 <div class="col">
                     <div class = "card shadow" id="buy-cards">
-                        <div class="card-body">
+                        <div class="card-body" data-aos="flip-right">
                             <img class="card-img-top" src="{{ s.shop_image.url}}" style="height: 150px; width: 250px;">
                             
                             <div style="font-size: 1.25rem;color: #000000;font-weight: 600;" >

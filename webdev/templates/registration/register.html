@@ -10,12 +10,12 @@
 	<img class="wave" src="../media/wave.png">
 	<div class="container">
 		<div class="img">
-			<img src="../media/bg.svg">
+			<img src="../media/bg.svg" data-aos="flip-right">
 		</div>
 		<div class="login-content">
             <form method ="post" class="form-css">
-                <img src="../media/profile.jpg">
-                <h2 class="title" style="color: hsl(251, 67%, 18%);">Register</h2>
+                <img src="../media/profile.jpg" data-aos="flip-left">
+                <h2 class="title" style="color: hsl(251, 67%, 18%);" data-aos="fade-up">Register</h2>
                 {% csrf_token %}
                 {% for field in registration_form %}
                     <p>
@@ -26,7 +26,7 @@
                         {% endfor %}   
                     </p>
                 {% endfor %}
-                <br><br><button type="submit" class="btn colour">Register</button>
+                <br><br><button type="submit" class="btn colour" data-aos="fade-left">Register</button>
         </div>
     </div>
   </body>
