@@ -86,3 +86,18 @@ class Shop(models.Model):
     services = MultiSelectField(choices=Services)
     shop_image = models.ImageField()
     service_charge = models.IntegerField()
+
+    def __str__(self):
+        return self.shop_name
+
+class Booking(models.Model):
+    booking_id = models.UUIDField(primary_key=True,default=uuid.uuid4, editable=False)
+    customer = models.ForeignKey(User, default='', on_delete=models.CASCADE)
+    hired_shop = models.ForeignKey(Shop, on_delete=models.CASCADE)
+    services_required = MultiSelectField(choices=Services)
+    time = models.DateTimeField(default=timezone.now)
+    cost = models.IntegerField()
+
+    def __str__(self):
+        return self.booking_id
+    
