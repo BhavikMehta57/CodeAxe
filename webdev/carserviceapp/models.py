@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.utils import timezone
+from multiselectfield import MultiSelectField
+# from django.contrib.gis.db import models as gismodels
 import uuid
 # Create your models here.
 
@@ -43,6 +45,7 @@ class User(AbstractBaseUser):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
     phone_number = models.IntegerField(unique=True)
+    # location = gismodels.PointField()
     is_admin = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
@@ -64,6 +67,14 @@ class User(AbstractBaseUser):
     def has_module_perms(self,app_label):
         return True
 
+Services = (
+    (1,"Vehicle Servicing"),
+    (2,"Vehicle Breakdown Support"),
+    (3,"Vehicle Parts Replacement"),
+    (4,"Vehicle Modification"),
+    (5,"Body Repair & Repainting"),
+)
+
 class Shop(models.Model):
     shop_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     shop_name = models.CharField(max_length=50)
@@ -71,6 +82,7 @@ class Shop(models.Model):
     shop_email = models.EmailField(max_length=60,unique=True)
     shop_contact = models.IntegerField(unique=True)
     owner_contact = models.IntegerField(unique=True)
-    services = models.CharField(max_length=500)
+    # shop_location = gismodels.PointField()
+    services = MultiSelectField(choices=Services)
     shop_image = models.ImageField()
     service_charge = models.IntegerField()
