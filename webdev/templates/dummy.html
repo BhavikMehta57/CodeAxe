@@ -1,43 +1,26 @@
+{% extends '../base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Booking{% endblock %}
+{% block navbar %}
+	{% include "../navbar.html" %}	  
+{% endblock %}
+
+{% block content %}
 <div>
-	<!--category section-->   
-	<div class="category">
-		<div class="container">
-			<h3 class="category"><b>categories</b></h3><br>
-			<div class="row">
-				<div class="col-sm-3">
-					<div class="image__wrapper">
-						<img src="../media/profile.jpg">
-						<div class="image-text">
-							<h5><a href="#">CAR</a></h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<div class="image__wrapper">
-						<img src="../media/profile.jpg">
-						<div class="image-text">
-							<h5><a href="#">MOTORCYCLE</a></h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<div class="image__wrapper">
-						<img src="../media/profile.jpg">
-						<div class="image-text">
-							<h5><a href="#">TRUCK</a></h5>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<div class="image__wrapper">
-						<img src="../media/profile.jpg">
-						<div class="image-text">
-							<h5><a href="#">BUS</a></h5>
-						</div>
-					</div>
-				</div>                     
-			</div>
-		</div><br><br>
-		<a href="#" type="button" class="btn btn-success btn-lg justify-content-center find_shop">Find Nearby shops</a>
-	</div>
+<img class="wave" src="../media/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="../media/bg.svg">
+		</div>
+		<div class="login-content">
+<form method ="post" class="form-css">
+    <img src="../media/profile.jpg">
+    <h2 class="title" style="color: hsl(251, 67%, 18%);">Book</h2>
+    {% csrf_token %}
+    {{form}}
+    <button type="submit" class="btn colour">Book</button>
+</form>
 </div>
+
+{% endblock %}
+
