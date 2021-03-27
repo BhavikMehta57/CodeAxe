@@ -35,13 +35,13 @@ def shop_view(request):
 
 def booking_view(request):
     form = BookingForm()
-    if str(request.user) != "AnonymousUser":
+    if not request.user.is_anonymous:
         form = BookingForm()
         if request.method == 'POST':
             form = BookingForm(request.POST, request.FILES)
             if form.is_valid():
                 form.save()
-                return render(request, 'registration/myaccount.html')
+                return redirect('myaccount')
             else:
                 return render(request, 'registration/booking.html', {'form': form})
         return render(request, 'registration/booking.html', {'form': form})
@@ -49,7 +49,9 @@ def booking_view(request):
         return redirect("login")
 
 def myaccount_view(request):
-    return render(request,'registration/myaccount.html')
+    current_user = request.user
+    mybookings = Booking.objects.filter(customer=current_user)
+    return render(request,'registration/myaccount.html',{'mybookings':mybookings})
 
 
 def shops_view(request):

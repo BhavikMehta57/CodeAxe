@@ -1,0 +1,42 @@
+{% extends '../base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Log In{% endblock %}
+{% block navbar %}
+	{% include "../Navbar.html" %}	  
+{% endblock %}
+{% block content %}
+<style>
+    table {
+        width:100%;
+        border-collapse: collapse;
+    }
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+</style>
+<body>
+    <br>
+    <h3>MY BOOKINGS</h3>
+    <table>
+        <tr>
+            <th>Booking ID</th>
+            <th>Shop Namw</th>
+            <th>Services</th>
+            <th>Time</th>
+            <th>Cost</th>
+        </tr>
+        {% for b in mybookings%}
+        <tr>
+            <th>{{b.booking_id}}</th>
+            <th>{{b.hired_shop}}</th>
+            <th>{{b.services_required}}</th>
+            <th>{{b.time}}</th>
+            <th>{{b.cost}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+</body>
+{% endblock %}
