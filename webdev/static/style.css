@@ -123,8 +123,7 @@ nav {
 
 .category {
   text-align: center;
-  padding: 0 100px;
-  margin: 0 20px;
+  padding: 0 50px;
 }
 
 .category_text {
@@ -235,7 +234,8 @@ nav {
   transition: all 0.4s;
 }
 
-.col-md-9 {
+.card-text {
   color: white;
   padding: 20px;
 }
+
