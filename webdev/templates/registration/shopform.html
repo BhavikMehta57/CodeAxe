@@ -1,0 +1,27 @@
+{% extends '../base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Log In{% endblock %}
+{% block navbar %}
+	{% include "../navbar.html" %}	  
+{% endblock %}
+
+{% block content %}
+<body>
+	<h2 style="text-align: center; padding: 10px;">Shop Register</h2>
+	<img class="wave" src="../media/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="../media/bg.svg">
+		</div>
+		<div class="login-content">
+			<form cform method="POST" enctype="multipart/form-data" class="form-css">
+				<img src="../media/profile.jpg">
+				<h2 class="title">Welcome</h2>
+        {% csrf_token %}
+        {{form.as_p}}
+              <button type="submit" class="btn justify-content-center color">Login</button>
+            </form>
+        </div>
+    </div>
+  </body>
+{% endblock %}

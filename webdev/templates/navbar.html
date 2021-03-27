@@ -6,11 +6,11 @@
   </div>
   <ul class="nav-links">
       <li><a href = "#">Nearby Shops</a></li>
-      <li><a href = "/">Home</a></li>
+      <li><a href = "/" class="active">Home</a></li>
       {% if user.is_authenticated %}
-      <li><a href = "#">Partner with us</a></li>
+      <li><a href = "{% url 'shopregister' %}">Partner with us</a></li>
       <li><a href = "#">My Account</a></li>
-      <li><a href = "{% url 'login' %}">Log Out</a></li>
+      <li><a href = "{% url 'logout' %}">Log Out</a></li>
       {% else %}
       <li><a href = "{% url 'login' %}">Log In</a></li>
       <li><a href = "{% url 'register' %}">Sign Up</a></li>
