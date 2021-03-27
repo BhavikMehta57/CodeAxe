@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.utils import timezone
 from multiselectfield import MultiSelectField
-# from django.contrib.gis.db import models as gismodels
+from address.models import AddressField
 import uuid
 # Create your models here.
 
@@ -82,7 +82,7 @@ class Shop(models.Model):
     shop_email = models.EmailField(max_length=60,unique=True)
     shop_contact = models.IntegerField(unique=True)
     owner_contact = models.IntegerField(unique=True)
-    # shop_location = gismodels.PointField()
+    shop_location = AddressField()
     services = MultiSelectField(choices=Services)
     shop_image = models.ImageField()
     service_charge = models.IntegerField()

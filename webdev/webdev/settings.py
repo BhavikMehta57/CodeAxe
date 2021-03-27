@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'django.contrib.gis',
+    'address',
     'carserviceapp.apps.CarserviceappConfig',
     'multiselectfield',
     'crispy_forms',
@@ -141,4 +141,4 @@ LOGOUT_REDIRECT_URL = '/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-GDAL_LIBRARY_PATH = r"C:\Program Files\GDAL\gdal302"
+GOOGLE_API_KEY = 'AIzaSyBtI-oy0zp3Vprzpymy3ULNko55H-wyIyI'
