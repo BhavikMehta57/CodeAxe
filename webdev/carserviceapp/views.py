@@ -36,9 +36,6 @@ def shop_view(request):
 def booking_view(request):
     form = BookingForm()
     if str(request.user) != "AnonymousUser":
-        currentuser = request.user
-        user = User.objects.values_list(
-            'email', flat=True).get(email=currentuser)
         form = BookingForm()
         if request.method == 'POST':
             form = BookingForm(request.POST, request.FILES)
