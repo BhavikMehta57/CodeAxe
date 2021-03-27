@@ -83,9 +83,12 @@ class Shop(models.Model):
     shop_contact = models.IntegerField(unique=True)
     owner_contact = models.IntegerField(unique=True)
     shop_location = AddressField()
-    services = MultiSelectField(choices=Services)
+    vehicle_servicing_charge = models.IntegerField()
+    vehicle_breakdown_Support_charge = models.IntegerField()
+    vehicle_parts_Replacement_charge = models.IntegerField()
+    vehicle_modification_charge = models.IntegerField()
+    body_repair_and_repainting_charge = models.IntegerField()
     shop_image = models.ImageField()
-    service_charge = models.IntegerField()
 
     def __str__(self):
         return self.shop_name

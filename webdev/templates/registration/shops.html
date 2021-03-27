@@ -1,0 +1,41 @@
+{% extends '../base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Shops{% endblock %}
+{% block navbar %}
+	{% include "../navbar.html" %}	  
+{% endblock %}
+{% block content %}
+<div class="">
+    <div class="aesthetic-back-cover">
+    <h3>REGISTERED SHOPS</h3>
+        <div class="container-fluid" style="display: flex;">
+            <div class="row">
+            {% for s in shops %} 
+                <div class="col">
+                    <div class = "card shadow" id="buy-cards">
+                        <div class="card-body">
+                            <img class="card-img-top" src="{{ s.shop_image.url}}" style="height: 150px; width: 250px;">
+                            
+                            <div style="font-size: 1.25rem;color: #000000;font-weight: 600;" >
+                                {{s.shop_name}}
+                                <span style="font-size: 0.8rem;color: #636363;padding-left: 5px;" >Owned by {{s.owner_name}}</span>
+                            </div>
+                            <div style="font-size: 0.8rem;color: #636363;" >Shop Contact <span class="pl-2">{{s.shop_contact}}</span></div>
+                            <div style="font-size: 0.8rem;color: #636363;" >Shop Email <span class="pl-2">{{s.shop_email}}</span></div>
+                            
+                            <div style="display: flex; height: auto;font-size: 1rem;padding: 5px 0;">
+                                <i class="fa fa-map-marker-alt"></i>
+                                <span class="pl-2">{{s.shop_location}}</span>
+                            </div>
+                            
+                            
+                            <a href="/booking/?shopId={{s.shop_id}}" style="display: block;width: 100%;margin: auto;"><button style="width: 100%;" class="btn btn-primary mt-3">Book <div class="fa fa-shopping-cart"></div></button></a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

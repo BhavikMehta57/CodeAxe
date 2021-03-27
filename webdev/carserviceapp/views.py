@@ -54,3 +54,9 @@ def booking_view(request):
 
 def myaccount_view(request):
     return render(request,'registration/myaccount.html')
+
+
+def shops_view(request):
+    shops = Shop.objects.all()
+    context = {'shops': shops}
+    return render(request,'registration/shops.html',context)
