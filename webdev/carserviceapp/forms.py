@@ -20,4 +20,4 @@ class ShopForm(forms.ModelForm):
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
-        fields = ['customer','hired_shop','services_required','cost']
+        fields = ['customer','hired_shop','services_required']
