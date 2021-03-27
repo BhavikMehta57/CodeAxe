@@ -38,10 +38,10 @@ def booking_view(request):
     if str(request.user) != "AnonymousUser":
         form = BookingForm()
         if request.method == 'POST':
-            form = BookingForm(request.POST, request.FILES)
+            form = BookingForm(request.POST)
             if form.is_valid():
                 form.save()
-                return render(request, 'registration/myaccount.html', {'form': form})
+                return render(request, 'registration/myaccount.html')
             else:
                 return render(request, 'registration/booking.html', {'form': form})
         return render(request, 'registration/booking.html', {'form': form})

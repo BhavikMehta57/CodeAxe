@@ -99,8 +99,4 @@ class Booking(models.Model):
     hired_shop = models.ForeignKey(Shop, on_delete=models.CASCADE)
     services_required = MultiSelectField(choices=Services)
     time = models.DateTimeField(default=timezone.now)
-    cost = models.IntegerField()
-
-    def __str__(self):
-        return self.booking_id
-    
+    cost = models.IntegerField(default=100)
