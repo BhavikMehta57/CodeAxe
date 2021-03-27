@@ -7,7 +7,6 @@
 
 {% block content %}
 <body>
-	<h2 style="text-align: center; padding: 10px;">Login</h2>
 	<img class="wave" src="../media/wave.png">
 	<div class="container">
 		<div class="img">
@@ -16,14 +15,16 @@
 		<div class="login-content">
 			<form cform method="POST" enctype="multipart/form-data" class="form-css">
 				<img src="../media/profile.jpg">
-				<h2 class="title">Welcome</h2>
+				<h2 class="title" style="color: hsl(251, 67%, 18%);">Login</h2>
         {% csrf_token %}
         {{form.as_p}}
-              <button type="submit" class="btn justify-content-center color">Login</button>
-            	<a href="{% url 'register' %}" class="dont_acc">Don't have an account ?</a>
-            	<input type="submit" class="btn colour" value="Sign-up">
+              <br><button type="submit" class="btn justify-content-center">Login</button><br><br>
+			  <p style="color:rgb(90, 86, 86);">Dont have an account?</p>
+            	<a href="{% url 'register' %}" type="button" class="btn">Sign-up</a>
+            
             </form>
         </div>
     </div>
   </body>
 {% endblock %}
+
