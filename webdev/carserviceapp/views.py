@@ -60,7 +60,11 @@ def booking_view(request):
                 message = f'Hi {hired_shop}, You have a new booking from {firstname} {lastname}.Services Required: {services}.Contact Details: Email - {email} , Phone Number - {phonenumber}'
                 email_from = settings.EMAIL_HOST_USER
                 recipient_list = [shop_email ]
+                subject1 = 'Your Booking'
+                message1 = f'Hi {firstname} {lastname}. Services Asked: {services}.'
+                recipient_list_1 = [currentuser]
                 send_mail( subject, message, email_from, recipient_list)
+                send_mail(subject1, message1,email_from,recipient_list_1)
                 return redirect('myaccount')
             else:
                 return render(request, 'registration/booking.html', {'form': form})
