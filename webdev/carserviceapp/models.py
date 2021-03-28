@@ -67,11 +67,11 @@ class User(AbstractBaseUser):
         return True
 
 Services = (
-    (1,"Vehicle Servicing"),
-    (2,"Vehicle Breakdown Support"),
-    (3,"Vehicle Parts Replacement"),
-    (4,"Vehicle Modification"),
-    (5,"Body Repair & Repainting"),
+    ("Vehicle Servicing","Vehicle Servicing"),
+    ("Vehicle Breakdown Support","Vehicle Breakdown Support"),
+    ("Vehicle Parts Replacement","Vehicle Parts Replacement"),
+    ("Vehicle Modification","Vehicle Modification"),
+    ("Body Repair & Repainting","Body Repair & Repainting"),
 )
 
 class Shop(models.Model):
