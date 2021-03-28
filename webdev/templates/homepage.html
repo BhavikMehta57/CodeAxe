@@ -5,10 +5,50 @@
 {% endblock %}
 
 {% block content %}
+<div id='map' style='width: 600px; height: 300px;'></div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYmhhdmlrNTciLCJhIjoiY2ttcnVhdGR0MDh5NTJ2cG8yYndnYXU3cCJ9.dVLu56iTkuL_G8l-vcIlKQ';
+  
+  navigator.geolocation.getCurrentPosition(successLocation,errorLocation,{enableHighAccuracy: true})
+
+  function successLocation(position){
+	  console.log(position)
+	  setupMap([position.coords.longitude,position.coords.latitude])
+
+  }
+
+  function errorLocation(){
+	  setupMap([0.0,0.0])
+
+  }
+
+  function setupMap(center){
+		var map = new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/mapbox/streets-v11',
+		center:center,
+		zoom:12
+	});
+  
+
+
+	map.addControl(new mapboxgl.NavigationControl());
+
+  
+	/*map.addControl(
+		new MapboxDirections({
+		accessToken: mapboxgl.accessToken
+		}),
+		'top-left'
+	);*/
+  }
+  
+</script>
+
 <div>
 	<!--category section-->   
 	<div class="category">
-			<h3 class="category_text" data-aos="fade-up"><b>All In One</b></h3><br>
+			<h3 class="category_text" data-aos="fade-left"><b>All In One</b></h3><br>
 			<div class="row">
 				<div class="col-sm-3" data-aos="fade-up">
 					<div class="image__wrapper">
@@ -45,13 +85,6 @@
 			</div>
 	</div>
 	<br><br>
-
-<div class="category" id="about">
-	<h3 class="category_text" data-aos="fade-up"><b>About</b></h3>
-	<br>
-	<p data-aos="fade-left" style="background-color: #38d39f; color:white; padding: 20px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo amet maiores praesentium tenetur ut, quisquam architecto molestias perferendis nemo accusamus id modi vel quaerat accusantium nulla in error, excepturi, fugit fuga impedit ea optio voluptas? Rerum modi molestiae a? Explicabo nam quaerat consequuntur voluptates sunt reprehenderit asperiores tempore laudantium similique perferendis! Itaque, eos ipsum! Repellat molestiae commodi aut illo sequi! Culpa, explicabo dolorum animi veritatis, ipsum dicta deserunt fuga molestias, non dolores sit praesentium ea. Consequatur placeat expedita, fugiat assumenda ea voluptas? Quae ipsa praesentium harum sit fuga, nostrum nemo modi laudantium sint soluta ducimus, et fugiat non error eaque.</p>
-    <br>
-</div>
 	
 <div class = "category">
 	<h3 class="category_text" data-aos="fade-up"><b>Key Features</b></h3>
@@ -59,15 +92,15 @@
 		<div class="row">
 		  <div class="col-md-3 card-img" data-aos="fade-right"><img src="../media/quickservice.jpeg"></div>
 		  <div class="col-md-9 card-text" data-aos="fade-left" style="background-color: #38d39f">
-			  <h3>Quick Services</h3>
-			  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit assumenda temporibus laboriosam, aperiam sit sunt repudiandae optio vel animi id consectetur, vitae fuga cum voluptates numquam perferendis, soluta quidem magni.</p>
+			  <h1>Quick Services</h1>
+			  <h3>We know, no one likes waiting around a broken vehicle. A quick service provided by our end.</h3>
 			</div>
 		</div>
         <br>
 		<div class="row">
 			<div class="col-md-9 card-text" data-aos="fade-right" style="background-color: #38d39f">
-				<h3>Skilled Mechanics</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, optio quidem. Animi omnis nihil suscipit illo distinctio? Provident ipsum eveniet ducimus, voluptas porro, aliquid ad impedit deserunt eius sint libero, atque recusandae. Minima consequuntur laboriosam consectetur amet aperiam repellat delectus obcaecati tempora debitis molestias ipsam quia nulla rem fugit ullam, vitae labore hic expedita eius. Voluptatem vero, optio, ipsum recusandae hic tempore molestiae nesciunt nihil dolorum ad, sit animi commodi qui nisi? Quisquam adipisci ipsam hic doloremque neque voluptatem nemo velit labore, atque magni nesciunt sapiente consectetur, quae aperiam repellat culpa corporis nam obcaecati cum fugiat ex. Nulla, delectus perspiciatis?</p>
+				<h1>Skilled Mechanics</h1>
+				<h3>We have collaborated with most efficient mechanics. The adaptability and problem solving skills improves the service.</h3>
 			</div>
 			<div class="col-md-3 card-img" data-aos="fade-left"><img src="../media/skilledmechanic.jpeg"></div>
 		</div>
@@ -75,32 +108,20 @@
 		<div class="row">
 			<div class="col-md-3 card-img" data-aos="fade-right"><img src="../media/roadsideassitance.jpeg"></div>
 			<div class="col-md-9 card-text" data-aos="fade-left" style="background-color: #38d39f">
-				<h3>Road Side Assistance</h3>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem accusamus sequi id quam libero doloribus repellendus, laborum tenetur, ab cumque eaque laudantium tempora nam? Mollitia suscipit quam, reiciendis laborum, architecto tenetur aperiam, inventore recusandae rem dolorem nisi magni corrupti quaerat porro iure aut iste corporis vel soluta iusto ut dolore. Repellendus placeat non, ipsa eaque quo, ea illo eligendi aut assumenda enim omnis corporis maiores, suscipit explicabo laudantium? Nam omnis molestiae consectetur mollitia, nostrum eos, ullam doloribus quidem debitis veritatis saepe perspiciatis cum excepturi minus esse! Cum eos perspiciatis, quos eum eligendi, nostrum temporibus, autem reprehenderit omnis quas a dolorem.</p>
+				<h1>Road Side Assistance</h1>
+				<h3>Your comfort means a lot. So wherever the breakdown happens you just need to pull over and click on <b>Book Service</b></h3>
 			</div>
 		</div>
         <br>
 		<div class="row">
 			<div class="col-md-9 card-text" data-aos="fade-right" style="background-color: #38d39f">
-				<h3>24/7 Services</h3>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni deleniti voluptatem expedita quod officia maxime libero laborum quasi velit explicabo eveniet alias atque quisquam provident possimus tempora earum, aut distinctio. Ipsa qui consequatur laborum doloremque, beatae repellendus illo aperiam. Totam eveniet distinctio tempore sapiente? Excepturi, quo consectetur, libero vitae ipsam natus modi pariatur nihil nisi obcaecati soluta, doloremque nam quas nostrum explicabo quaerat. Numquam, unde quisquam? Repellat tempore illo numquam quam animi reprehenderit earum consectetur, culpa exercitationem ab, unde facilis enim eveniet vero nesciunt sunt placeat! Dignissimos sunt vero tenetur eligendi quaerat sapiente. Itaque et rem exercitationem ratione tempore reprehenderit.</p>
+				<h1>24/7 Services</h1>
+				<h3>No need to be concerned of the hour on the clock. Anytime we are just a click away!</h3>
 			</div>
 			<div class="col-md-3 card-img" data-aos="fade-left"><img src="../media/24_7.jpeg"></div>
 		</div>
-    </div>
-	<!-- <div class="category" id="FAQ">
-		<br>
-		<h3 class="category_text" data-aos="fade-up"><b>FAQ</b></h3>
-		<br>
-		
-	</div> -->
-	<div class="category" id="support">
-		<br>
-		<h3 class="category_text" data-aos="fade-up"><b>Support</b></h3>
-		<br>
-		<p data-aos="fade-left" style="background-color: #38d39f; color:white; padding: 20px; font-size: 20px;"><i class="fa fa-phone"> 0123456789</i><br><i class="fa fa-envelope-open"> support@xyz.in</i></p>
-		<br>
-	</div>
+
+</div>
 </div>
 {% endblock %}
 
