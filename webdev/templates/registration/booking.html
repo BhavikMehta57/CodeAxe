@@ -1,4 +1,5 @@
 {% extends '../base.html' %}
+{% load crispy_forms_tags %}
 {% block title %}Booking{% endblock %}
 {% block navbar %}
 	{% include "../navbar.html" %}
@@ -16,7 +17,7 @@
 				<img src="../media/profile.jpg" data-aos="flip-left">
 				<h2 class="title" style="color: hsl(251, 67%, 18%);" data-aos="fade-up">Book</h2>
 				{% csrf_token %}
-				{{form}}
+				{{form | crispy}}
 				<br>
 				<br>
 				<button type="submit" class="btn colour" data-aos="fade-left">Book</button>

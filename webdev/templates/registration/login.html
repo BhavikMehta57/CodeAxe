@@ -17,7 +17,7 @@
 				<img src="../media/profile.jpg" data-aos="flip-left">
 				<h2 class="title" data-aos="fade-up" style="color: hsl(251, 67%, 18%);">Login</h2>
         {% csrf_token %}
-        {{form.as_p}}
+        {{form | crispy}}
               <br><button type="submit" class="btn justify-content-center" data-aos="fade-left">Login</button><br><br>
 			  <p style="color:rgb(90, 86, 86);">Dont have an account?</p>
             	<a href="{% url 'register' %}" type="button" class="btn" data-aos="fade-right">Sign-up</a>
